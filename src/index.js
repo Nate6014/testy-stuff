@@ -1,12 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import TelegramLoginButton from 'react-telegram-login';
+ var pic = ''
 
-ReactDOM.render(<App />, document.getElementById('root'));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const handleTelegramResponse = response => {
+  console.log(response);
+ alert("thanks for the soul " + response.first_name)
+
+ 
+}
+const logIn = <div><TelegramLoginButton dataOnauth={handleTelegramResponse}  botName="Tucson_furs_bot" /> </div>
+
+console.log(pic);
+  
+ReactDOM.render( logIn, document.getElementById('telegramButton'),
+
+);
+
+
